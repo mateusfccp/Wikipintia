@@ -1,0 +1,31 @@
+version: '3'
+services:
+  core:
+    build: ./core
+    environment:
+      DB_HOST: data
+      DB_USER: mateusfccp
+      DB_PASS: pintorei
+      DB_NAME: wikipintia
+    ports:
+      - "5000:5000"
+    volumes:
+     - ~/Projetos/wikipintia/core/app:/go/src/wikipintia
+  data:
+    build: ./data
+    volumes:
+     - /data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: bp*&5K7f?Bk;Y?Eh
+      MYSQL_DATABASE: wikipintia
+      MYSQL_USER: mateusfccp
+      MYSQL_PASSWORD: pintorei
+  admin:
+    build: ./admin
+    environment:
+      PMA_HOST: data
+      PMA_PORT: 3306
+    links:
+     - data
+    ports:
+     - "8080:80"

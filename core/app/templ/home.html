@@ -1,0 +1,13 @@
+{{define "title"}}Wikipintia{{end}}
+
+{{define "header"}}
+<h1>Bem vindo ao Wikipintia!</h1>
+{{end}}
+
+{{define "content"}}
+<ul>
+    {{ range . }}
+        <li><a href="/{{ .Title }}" >{{ .Title }}</a></li>
+    {{ end }}
+</ul>
+{{end}}

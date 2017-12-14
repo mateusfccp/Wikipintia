@@ -1,0 +1,38 @@
+body header {
+    padding: 2rem;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+}
+
+body header h1 {
+    margin: 0;
+}
+
+body header .options {
+    margin: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+body header .options li {
+    margin: 0 .2rem;
+    display: flex;
+}
+
+body header .options li a {
+    background-color: #ddd;
+    padding: .25rem;
+    border-radius: 4px;
+    color: inherit;
+}
+
+body header .options li a:hover {
+    text-decoration: none;
+    background-color: #ccc;
+}
+
+.container {
+    padding: 2rem;
+}

@@ -1,0 +1,15 @@
+{{define "title"}}Wikipintia – {{.Title}}{{end}}
+
+
+{{define "header"}}
+<h1>{{.Title}}</h1>
+<ul class="options">
+    <li><a href="/{{.Title}}/edit/">editar</a></li>
+    <li><a href="/obliterate/{{.Title}}">deletar</a></li>
+    <li><a href="/">voltar</a></li>
+</ul>
+{{end}}
+
+{{define "content"}}
+<div>{{ html .Content }}</div>
+{{end}}
