@@ -24,25 +24,25 @@ As said above, Wikipintia is being developed within docker containers. I have no
 To properly run the server, some environment variables should be set:
 
 ### MariaDB related
-	* `MYSQL_ROOT_PASSWORD`: The MariaDB root password
-	* `MYSQL_DATABASE`: The MariaDB database name
-	* `MYSQL_USER`: An non-root MariaDB user that will have access to database (as set above)
-	* `MYSQL_PASSWORD`: The password for this user
+* `MYSQL_ROOT_PASSWORD`: The MariaDB root password
+* `MYSQL_DATABASE`: The MariaDB database name
+* `MYSQL_USER`: An non-root MariaDB user that will have access to database (as set above)
+* `MYSQL_PASSWORD`: The password for this user
 	
 ### phpMyAdmin related
-	* `PMA_HOST`: The host of your database. By default, it should be `data`.
-	* `PMA_PORT`: The port of your database host. By default, it should be `3306`.
+* `PMA_HOST`: The host of your database. By default, it should be `data`.
+* `PMA_PORT`: The port of your database host. By default, it should be `3306`.
 
 ### Wiki related
-	* `APP_ENV`: `production` for production. Any other value will start the server on development mode.
-	* `DB_HOST`: The host of your database. By default, it should be `data`.
-	* `DB_USER`: The user that is going to access database. I recommend you to use the same as `MYSQL_USER`.
-	* `DB_PASS`: The pass of the user that is going to access database. I recommend you to use the same as `MYSQL_PASS`.
-	* `DB_NAME`: It must be the same as defined on `MYSQL_DATABASE`.
+* `APP_ENV`: `production` for production. Any other value will start the server on development mode.
+* `DB_HOST`: The host of your database. By default, it should be `data`.
+* `DB_USER`: The user that is going to access database. I recommend you to use the same as `MYSQL_USER`.
+* `DB_PASS`: The pass of the user that is going to access database. I recommend you to use the same as `MYSQL_PASS`.
+* `DB_NAME`: It must be the same as defined on `MYSQL_DATABASE`.
 
 ## Building
-	1. Start `docker`.
-	2. Run `docker-compose build` on the root directory.
+1. Start `docker`.
+2. Run `docker-compose build` on the root directory.
 
 ## Running
 To run the server: `docker-compose up`.
