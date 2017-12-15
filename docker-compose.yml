@@ -10,7 +10,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-     - ~/Projetos/wikipintia/core/app:/go/src/wikipintia
+     - ~/Projetos/Wikipintia/core/app:/go/src/wikipintia
   data:
     build: ./data
     volumes:
