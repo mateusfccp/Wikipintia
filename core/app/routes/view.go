@@ -16,10 +16,12 @@ import (
 func View(db *gorm.DB, templ *template.Template) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		var entry models.Entry
-		err := db.Where(&models.Entry{Title: bone.GetValue(r, "id")}).First(&entry)
+
+		err := db.Where(&models.Entry{Slug: bone.GetValue(r, "slug")}).First(&entry)
 		if err != nil {
 			log.Println(err)
 		}
+
 		entry.Content = string(goorgeous.OrgCommon([]byte(entry.Content)))
 		templ.ExecuteTemplate(w, "master", entry)
 	})
