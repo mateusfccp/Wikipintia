@@ -83,6 +83,7 @@ func main() {
 	mux.Get("/:id", routes.View(db, templates["view.html"]))
 	mux.Get("/:id/edit", routes.Edit(db, templates["edit.html"]))
 	mux.Post("/:id/edit", routes.Save(db))
+	mux.Get("/:id/obliterate", routes.Obliterate(db))
 
 	http.ListenAndServe(":5000", mux)
 }
