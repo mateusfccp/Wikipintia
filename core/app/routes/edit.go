@@ -32,7 +32,6 @@ func Save(db *gorm.DB) http.Handler {
 			log.Println(err)
 		}
 
-		log.Println("Redirecting...")
 		http.Redirect(w, r, "/"+slug, http.StatusFound)
 	})
 }

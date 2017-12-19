@@ -8,9 +8,8 @@
 {{end}}
 
 {{define "content"}}
-<form action="/{{.Title}}/edit" method="POST">
-    <input type="hidden" name="method" value="put" />
+<form action="/{{.Slug}}/edit" method="POST">
     <div><textarea name="content" rows="20" cols="80">{{printf "%s" .Content}}</textarea></div>
-    <div><input type="submit" value="Salvar"></div>
+    <div><button>Salvar</button></div>
 </form>
 {{end}}

@@ -2,7 +2,6 @@ package routes
 
 import (
 	"html/template"
-	"log"
 	"net/http"
 
 	"wikipintia/database/models"
@@ -13,10 +12,12 @@ import (
 func Home(db *gorm.DB, templ *template.Template) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		var entries []models.Entry
-		err := db.Find(&entries)
-		if err != nil {
-			log.Println(err)
+
+		dbc := db.Find(&entries)
+		if dbc.Error != nil {
+			http.Error(w, dbc.Error.Error(), http.StatusExpectationFailed)
 		}
+
 		templ.ExecuteTemplate(w, "master", entries)
 	})
 }
