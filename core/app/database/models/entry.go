@@ -10,8 +10,8 @@ type Entry struct {
 	Slug       string `gorm:"not null"`
 	Content    string `gorm:"type:text;not null"`
 	Tags       []Tag  `gorm:"many2many:entry_tags"`
+	CategoryID uint   `gorm:"default:NULL"`
 	Category   Category
-	CategoryID uint
 }
 
 func MigrateEntry(db *gorm.DB) {

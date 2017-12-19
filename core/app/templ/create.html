@@ -1,0 +1,23 @@
+{{define "title"}}Wikipintia – Criar nova entrada{{end}}
+
+{{define "header"}}
+<h1>Criar nova entrada</h1>
+<ul class="options">
+    <li><a href="/">voltar</a></li>
+</ul>
+{{end}}
+
+{{define "content"}}
+<form action="/create" method="POST">
+    <label>
+        Título:
+        <input type="text" name="title" />
+    </label>
+    <div><textarea name="content" rows="20" cols="80"></textarea></div>
+    <label>
+        <input type="text" name="tags" />
+        Digite as tags separadas por ponto e vírgula (;).
+    </label>
+    <div><button>Criar</button></div>
+</form>
+{{end}}

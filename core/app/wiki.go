@@ -65,6 +65,7 @@ func main() {
 		os.Getenv("DB_NAME"))
 
 	db, _ := gorm.Open("mysql", dbString)
+	db.LogMode(true)
 
 	// if err != nil {
 	// 	http.Error(response, err.Error(), http.StatusInternalServerError)
@@ -80,6 +81,8 @@ func main() {
 	mux.Get("/static/", http.StripPrefix("/static/", fs))
 
 	mux.Get("/", routes.Home(db, templates["home.html"]))
+	mux.Get("/create", routes.Create(templates["create.html"]))
+	mux.Post("/create", routes.New(db))
 	mux.Get("/:id", routes.View(db, templates["view.html"]))
 	mux.Get("/:id/edit", routes.Edit(db, templates["edit.html"]))
 	mux.Post("/:id/edit", routes.Save(db))
