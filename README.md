@@ -28,10 +28,6 @@ To properly run the server, some environment variables should be set:
 * `MYSQL_DATABASE`: The MariaDB database name
 * `MYSQL_USER`: An non-root MariaDB user that will have access to database (as set above)
 * `MYSQL_PASSWORD`: The password for this user
-	
-#### phpMyAdmin related
-* `PMA_HOST`: The host of your database. By default, it should be `data`.
-* `PMA_PORT`: The port of your database host. By default, it should be `3306`.
 
 #### Wiki related
 * `APP_ENV`: `production` for production. Any other value will start the server on development mode.
