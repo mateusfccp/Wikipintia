@@ -43,7 +43,6 @@ To properly run the server, some environment variables should be set:
 ### Running
 To run the server: `docker-compose up`.
 
-The Wiki server will be listening at `localhost:5000`.
-A phpMyAdmin server will be available at `localhost:8080` for testing purposes.
+The Wiki server will be listening at `localhost:5000`. The database will be exposed on `localhost:8000`, so you may access it through any MySQL client.
 
 The container will look at any modifications on source when in development environment, and re-compile the server automatically, so you don't need to re-run `docker-compose build`.
